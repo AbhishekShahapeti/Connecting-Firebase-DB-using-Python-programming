@@ -1,26 +1,57 @@
-/* for adding the database name and adding the contents into it */
+1.pip install requests
 
-from firebase import firebase
+2.pip install python-firebase
 
-firebase=firebase.FirebaseApplication("Database URL",None)
+3.After installation you need to open Firebase Console and create a new project and create your firebase project.
 
-data ={
-    'Username':'xyz',
-    'Email':'xyz@gmail.com',
-    'phno':2431232,
-    'city':'ABC',
-    'country':'PQR'
+So now this is the code for 
 
-}
-result=firebase.post('Paste tablename link / name of table', data)
-print(result)
+#Inserting data to Firebase Real Time database 
+CODE:-
+		from firebase import firebase 
+		firebase = firebase.FirebaseApplication('URL of Database', None)
+		data =  { 'Username':'xyz',
+			'Email:'xyz@gmail.com',
+			'phno':2431232,
+			'city':'ABC',
+			'country':'PQR'
+				  }
+		result = firebase.post('authentication details for database /name of table/',data)
+		print(result)
+ 
+
+OK now in this line of code FirebaseApplication takes two parameters; one is URL of database and second is authentication details for database
+
+because for this project we have not set a rule by this reason we have given None in the second parameter.
+
+firebase = firebase.FirebaseApplication('URL of Database', None)
+
+And in this line of code we are going to insert data to our table
+result = firebase.post('authentication details for database /name of table/',data)
+ 
+This was for inserting data.
+ 
+And now to retrieve the data,  you can use this code
+
+#Retrieving The Data 
+
+CODE:-
+		from firebase import firebase
+		firebase = firebase.FirebaseApplication('URL of database', None)
+		result = firebase.get('authentication details for database /name of table/', '')
+		print(result)
+
+And now to retrieve the data,  you can use this code
+
+#Updating The Data
+
+CODE:-
+		from firebase import firebase
+		firebase = firebase.FirebaseApplication('Database URL', None)
+		firebase.put('/python-example-f6d0b/Students/-LjLUhaWGuxNd5gOEmse','Name','Bob')
+		print('Record Updated')
+
+ 
 
 
-
-/* for retriving the data which is added into the table */
-
-from firebase import firebase
-
-firebase=firebase.FirebaseApplication("Database URL",None)
-result=firebase.get('Paste tablename link / name of table','')
-print(result)
+ 
