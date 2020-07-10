@@ -53,7 +53,7 @@ And now to retrieve the data,  you can use this code
 CODE:-
 		from firebase import firebase
 		firebase = firebase.FirebaseApplication('Database URL', None)
-		firebase.put('/python-example-f6d0b/Students/-LjLUhaWGuxNd5gOEmse','Name','Bob')
+		firebase.put('/python-example-f6d0b/Students/-LjLUhaWGuxNd5gOEmse','Username','pqr')
 		print('Record Updated')
 
  
