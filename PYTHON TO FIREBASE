@@ -1,0 +1,62 @@
+
+Python Firebase Real Time Database
+
+FOLLOW THE FOLLOWING STEPS
+
+1.pip install requests
+
+2.pip install python-firebase
+
+3.After installation you need to open Firebase Console and create a new project and create your firebase project.
+
+So now this is the code for 
+
+#Inserting data to Firebase Real Time database 
+CODE:-
+		from firebase import firebase 
+		firebase = firebase.FirebaseApplication('URL of Database', None)
+		data =  { 'Username':'xyz',
+			'Email:'xyz@gmail.com',
+			'phno':2431232,
+			'city':'ABC',
+			'country':'PQR'
+				  }
+		result = firebase.post('authentication details for database /name of table/',data)
+		print(result)
+ 
+
+OK now in this line of code FirebaseApplication takes two parameters; one is URL of database and second is authentication details for database
+
+because for this project we have not set a rule by this reason we have given None in the second parameter.
+
+firebase = firebase.FirebaseApplication('URL of Database', None)
+
+And in this line of code we are going to insert data to our table
+result = firebase.post('authentication details for database /name of table/',data)
+ 
+This was for inserting data.
+ 
+And now to retrieve the data,  you can use this code
+
+#Retrieving The Data 
+
+CODE:-
+		from firebase import firebase
+		firebase = firebase.FirebaseApplication('URL of database', None)
+		result = firebase.get('authentication details for database /name of table/', '')
+		print(result)
+
+And now to retrieve the data,  you can use this code
+
+#Updating The Data
+
+CODE:-
+		from firebase import firebase
+		firebase = firebase.FirebaseApplication('Database URL', None)
+		firebase.put('/python-example-f6d0b/Students/-LjLUhaWGuxNd5gOEmse','Name','Bob')
+		print('Record Updated')
+
+ 
+
+
+ 
