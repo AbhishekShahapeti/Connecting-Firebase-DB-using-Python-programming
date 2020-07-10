@@ -1,0 +1,26 @@
+/* for adding the database name and adding the contents into it */
+
+from firebase import firebase
+
+firebase=firebase.FirebaseApplication("https://test-af37f.firebaseio.com/",None)
+
+data ={
+    'Username':'xyz',
+    'Email':'xyz@gmail.com',
+    'phno':2431232,
+    'city':'ABC',
+    'country':'PQR'
+
+}
+result=firebase.post('Paste tablename link / name of table', data)
+print(result)
+
+
+
+/* for retriving the data which is added into the table */
+
+from firebase import firebase
+
+firebase=firebase.FirebaseApplication("https://test-af37f.firebaseio.com/",None)
+result=firebase.get('Paste tablename link / name of table','')
+print(result)
