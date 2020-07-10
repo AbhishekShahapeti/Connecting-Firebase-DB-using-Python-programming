@@ -2,7 +2,7 @@
 
 from firebase import firebase
 
-firebase=firebase.FirebaseApplication("https://test-af37f.firebaseio.com/",None)
+firebase=firebase.FirebaseApplication("Database URL",None)
 
 data ={
     'Username':'xyz',
@@ -21,6 +21,6 @@ print(result)
 
 from firebase import firebase
 
-firebase=firebase.FirebaseApplication("https://test-af37f.firebaseio.com/",None)
+firebase=firebase.FirebaseApplication("Database URL",None)
 result=firebase.get('Paste tablename link / name of table','')
 print(result)
